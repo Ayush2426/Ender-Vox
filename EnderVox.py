@@ -1,15 +1,3 @@
-        
-
-        
-        # <style>
-        # .social-button-wrapper {
-        #     position: relative;
-        #     margin-bottom: 20px;
-        #     width: 100%;
-        # }
-        
-
-        
 import streamlit as st
 import pyttsx3
 import tempfile
@@ -66,7 +54,7 @@ class AdvancedTTS:
         self.pyttsx3_engine = None
         self.available_voices = []
         self.setup_pyttsx3()
-        pygame.mixer.init()
+        st.audio.init()
 
     def setup_pyttsx3(self):
         """Initialize pyttsx3 engine and get available voices."""
