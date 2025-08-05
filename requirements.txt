@@ -1,4 +1,5 @@
 pydub
 pyttsx3
 gtts
+pygame
 streamlit
