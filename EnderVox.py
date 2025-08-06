@@ -1,3 +1,15 @@
+        
+
+        
+        # <style>
+        # .social-button-wrapper {
+        #     position: relative;
+        #     margin-bottom: 20px;
+        #     width: 100%;
+        # }
+        
+
+        
 import streamlit as st
 import pyttsx3
 import tempfile
@@ -54,7 +66,7 @@ class AdvancedTTS:
         self.pyttsx3_engine = None
         self.available_voices = []
         self.setup_pyttsx3()
-        st.audio.init()
+        pygame.mixer.init()
 
     def setup_pyttsx3(self):
         """Initialize pyttsx3 engine and get available voices."""
@@ -229,7 +241,7 @@ def main():
             st.session_state.text_input = ""
 
         if input_method == "Type Text":
-            st.session_state.text_input = st.text_area("Enter text to convert:", value=st.session_state.text_input, height=150, placeholder="Type your text here...")
+            st.session_state.text_input = st.text_area("Enter text to convert:", value=st.session_state.text_input, height=250, placeholder="Type your text here...")
         else:
             uploaded_file = st.file_uploader("Upload a .txt or .md file:", type=['txt', 'md'])
             if uploaded_file:
